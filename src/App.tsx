@@ -1,6 +1,10 @@
 import './styles/global.css';
 
 import { SiteHeader } from './components/SiteHeader';
+import { HeroSection } from './sections/HeroSection';
+import { BeforeSection } from './sections/BeforeSection';
+import { BeginningSection } from './sections/BeginningSection';
+import { ArmorSection } from './sections/ArmorSection';
 import { AvengerSection } from './sections/AvengerSection';
 
 export default function App() {
@@ -11,7 +15,11 @@ export default function App() {
       </a>
       <SiteHeader />
       <main id="main-content">
-        <AvengerSection fadeIn={false} fadeOut={false} />
+        <HeroSection />
+        <BeforeSection />
+        <BeginningSection />
+        <ArmorSection />
+        <AvengerSection />
       </main>
     </>
   );

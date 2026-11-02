@@ -1,0 +1,125 @@
+.beginning-section {
+  background-color: var(--color-maroon);
+  color: var(--color-text-dark);
+}
+
+.beginning-section__inner {
+  width: 100%;
+  max-width: var(--max-width);
+  height: 100vh;
+  height: 100dvh;
+  margin-inline: auto;
+  padding: calc(var(--header-height) + 2rem) var(--gutter) 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.beginning-section__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: end;
+}
+
+.beginning-section__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(236, 233, 227, 0.72);
+  margin-bottom: 1.25rem;
+}
+
+.beginning-section__title {
+  font-size: var(--display-md);
+  line-height: 0.92;
+  color: var(--color-text-dark);
+}
+
+.beginning-section__title span {
+  display: block;
+}
+
+.beginning-section__copy p {
+  font-size: var(--size-body);
+  line-height: 1.7;
+  color: rgba(236, 233, 227, 0.82);
+}
+
+.beginning-section__copy p + p {
+  margin-top: 0.85rem;
+}
+
+.beginning-section__band {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: #120a0a;
+}
+
+.beginning-section__band::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 6, 6, 0) 55%, rgba(10, 6, 6, 0.7) 100%);
+  pointer-events: none;
+}
+
+.beginning-section__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.beginning-section__captions {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+}
+
+.beginning-section__quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+}
+
+@media (max-width: 899px) {
+  .beginning-section__inner {
+    height: auto;
+    gap: 2.5rem;
+  }
+
+  .beginning-section__top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .beginning-section__band {
+    flex: none;
+    height: 360px;
+  }
+
+  .beginning-section__captions {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}
