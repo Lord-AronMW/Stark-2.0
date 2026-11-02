@@ -1,0 +1,139 @@
+.behind-section {
+  background-color: var(--color-paper);
+  color: var(--color-text-light);
+}
+
+.behind-section__inner {
+  width: 100%;
+  max-width: var(--max-width);
+  height: 100vh;
+  height: 100dvh;
+  margin-inline: auto;
+  padding: calc(var(--header-height) + 2rem) var(--gutter) 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.behind-section__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: end;
+}
+
+.behind-section__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted-light);
+  margin-bottom: 1rem;
+}
+
+.behind-section__title {
+  font-size: var(--display-md);
+  color: var(--color-text-light);
+}
+
+.behind-section__title span {
+  display: block;
+}
+
+.behind-section__copy {
+  max-width: 30rem;
+}
+
+.behind-section__copy p {
+  font-size: var(--size-body);
+  line-height: 1.7;
+  color: var(--color-muted-light);
+}
+
+.behind-section__copy p + p {
+  margin-top: 0.85rem;
+}
+
+.behind-section__figure {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.behind-section__img {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.behind-section__caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted-light);
+}
+
+.behind-section__people {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-line-light);
+}
+
+.behind-section__name {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1;
+  color: var(--color-text-light);
+}
+
+.behind-section__tagline {
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 0.06em;
+  color: #8f1d21;
+}
+
+.behind-section__text {
+  margin-top: 0.6rem;
+  max-width: 26rem;
+  font-size: var(--size-caption);
+  line-height: 1.65;
+  color: var(--color-muted-light);
+}
+
+@media (max-width: 899px) {
+  .behind-section__inner {
+    height: auto;
+    gap: 2.5rem;
+  }
+
+  .behind-section__top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .behind-section__figure {
+    flex: none;
+    height: 320px;
+  }
+
+  .behind-section__img {
+    flex: none;
+    height: 100%;
+  }
+
+  .behind-section__people {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+}

@@ -6,6 +6,7 @@ import { BeforeSection } from './sections/BeforeSection';
 import { BeginningSection } from './sections/BeginningSection';
 import { ArmorSection } from './sections/ArmorSection';
 import { AvengerSection } from './sections/AvengerSection';
+import { BehindSection } from './sections/BehindSection';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <BeginningSection />
         <ArmorSection />
         <AvengerSection />
+        <BehindSection />
       </main>
     </>
   );
