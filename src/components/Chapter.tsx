@@ -1,10 +1,14 @@
-import { useMemo, useRef, type ReactNode } from 'react';
+import { useEffect, useMemo, useRef, type ReactNode } from 'react';
 import { gsap, ScrollTrigger, useGSAP } from '../lib/gsap';
-import { ChapterContext, type ChapterContextValue } from '../lib/chapterContext';
+import {
+  ChapterContext,
+  registerChapterSeeker,
+  type ChapterContextValue,
+} from '../lib/chapterContext';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import './Chapter.css';
 
-const FADE_SHARE = 0.5;
+const FADE_SHARE = 0.35;
 const DESKTOP_QUERY = '(min-width: 900px)';
 const MOBILE_QUERY = '(max-width: 899px)';
 
@@ -41,6 +45,7 @@ export function Chapter({
 }: ChapterProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const triggerRef = useRef<ScrollTrigger | null>(null);
+  const visibleRef = useRef(0);
   const listenersRef = useRef(new Set<(progress: number) => void>());
   const reducedMotion = useReducedMotion();
 
@@ -58,6 +63,7 @@ export function Chapter({
 
       mm.add(DESKTOP_QUERY, () => {
         const fade = Math.min(FADE_SHARE, FADE_SHARE / span);
+        visibleRef.current = fadeIn ? fade : 0;
         triggerRef.current = ScrollTrigger.create({
           trigger: section,
           start: 'top top',
@@ -73,6 +79,7 @@ export function Chapter({
       });
 
       mm.add(MOBILE_QUERY, () => {
+        visibleRef.current = 0;
         const range = section.offsetHeight + window.innerHeight;
         const fade = Math.min(FADE_SHARE, (FADE_SHARE * window.innerHeight) / range);
         ScrollTrigger.create({
@@ -89,6 +96,21 @@ export function Chapter({
     },
     { scope: sectionRef, dependencies: [reducedMotion, span, fadeIn, fadeOut] },
   );
+
+  useEffect(() => {
+    return registerChapterSeeker(id, () => {
+      const trigger = triggerRef.current;
+      const section = sectionRef.current;
+      if (trigger) {
+        window.scrollTo({
+          top: trigger.start + (trigger.end - trigger.start) * visibleRef.current,
+          behavior: reducedMotion ? 'auto' : 'smooth',
+        });
+      } else if (section) {
+        section.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+      }
+    });
+  }, [id, reducedMotion]);
 
   const contextValue = useMemo<ChapterContextValue>(
     () => ({

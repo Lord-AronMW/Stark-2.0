@@ -1,14 +1,27 @@
 import { useState } from 'react';
 import { NAV_CHAPTERS, SITE } from '../data/content';
+import { goToChapter } from '../lib/chapterContext';
 import './SiteHeader.css';
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
+  const jump = (id: string) => {
+    setOpen(false);
+    goToChapter(id);
+  };
+
   return (
     <header className="site-header">
       <div className="site-header__bar">
-        <a href="#hero" className="site-header__brand">
+        <a
+          href="#hero"
+          className="site-header__brand"
+          onClick={(event) => {
+            event.preventDefault();
+            jump('hero');
+          }}
+        >
           <svg className="site-header__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" strokeWidth="1.25" />
             <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -21,7 +34,13 @@ export function SiteHeader() {
           <ul>
             {NAV_CHAPTERS.map((chapter) => (
               <li key={chapter.id}>
-                <a href={`#${chapter.id}`}>
+                <a
+                  href={`#${chapter.id}`}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    jump(chapter.id);
+                  }}
+                >
                   <span className="site-header__number">{chapter.number}</span>
                   {chapter.label}
                 </a>
@@ -51,7 +70,13 @@ export function SiteHeader() {
         <ul>
           {NAV_CHAPTERS.map((chapter) => (
             <li key={chapter.id}>
-              <a href={`#${chapter.id}`} onClick={() => setOpen(false)}>
+              <a
+                href={`#${chapter.id}`}
+                onClick={(event) => {
+                  event.preventDefault();
+                  jump(chapter.id);
+                }}
+              >
                 <span className="site-header__number">{chapter.number}</span>
                 {chapter.label}
               </a>

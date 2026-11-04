@@ -16,10 +16,15 @@ function ReactorBody() {
   const chapter = useChapter();
   const innerRef = useRef<HTMLDivElement>(null);
   const reactorRef = useRef<HTMLDivElement>(null);
+  const fadeItemsRef = useRef<HTMLElement[]>([]);
   const reducedMotion = useReducedMotion();
 
   useLayoutEffect(() => {
     const reactor = reactorRef.current;
+    const inner = innerRef.current;
+    if (inner) {
+      fadeItemsRef.current = Array.from(inner.querySelectorAll<HTMLElement>('.reactor-section__fade'));
+    }
     if (!reactor || reducedMotion) return;
     gsap.set(reactor, { y: window.innerHeight * RISE_DISTANCE, scale: 1 });
   }, [reducedMotion]);
@@ -28,8 +33,7 @@ function ReactorBody() {
     if (!chapter || reducedMotion) return;
     return chapter.subscribe((progress) => {
       const reactor = reactorRef.current;
-      const inner = innerRef.current;
-      if (!reactor || !inner) return;
+      if (!reactor) return;
 
       const distance = window.innerHeight * RISE_DISTANCE;
       const rise = Math.min(progress / RISE_END, 1);
@@ -40,7 +44,7 @@ function ReactorBody() {
         y: distance * (1 - eased),
         scale: 1 + ZOOM_SCALE * zoom * zoom,
       });
-      gsap.set(inner.querySelectorAll('.reactor-section__fade'), {
+      gsap.set(fadeItemsRef.current, {
         opacity: 1 - Math.min(1, zoom * 2),
       });
     });

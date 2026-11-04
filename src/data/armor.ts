@@ -15,7 +15,7 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     tagline: 'Cave-built exoskeleton',
     film: 'Iron Man',
     year: 2008,
-    image: '/images/armor/mk-i.jpg',
+    image: '/public/images/mark1.jpg',
   },
   {
     id: 'mk-iii',
@@ -23,7 +23,7 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     tagline: 'Gold-titanium alloy',
     film: 'Iron Man',
     year: 2008,
-    image: '/images/armor/mk-iii.jpg',
+    image: '/public/images/mark3.jpg',
     description:
       'The red and gold arrives. A gold-titanium alloy solves the icing problem of the Mark II, turning an experiment into the silhouette the world will remember.',
   },
@@ -33,7 +33,7 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     tagline: 'Automated suit-up',
     film: 'The Avengers',
     year: 2012,
-    image: '/images/armor/mk-vii.jpg',
+    image: '/public/images/mark7.jpg',
   },
   {
     id: 'mk-xlii',
@@ -41,7 +41,7 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     tagline: 'Remote modular assembly',
     film: 'Iron Man 3',
     year: 2013,
-    image: '/images/armor/mk-xlii.jpg',
+    image: '/public/images/mark42.jpg',
   },
   {
     id: 'mk-l',
@@ -49,7 +49,7 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     tagline: 'Nanotech nano-assembly',
     film: 'Avengers: Infinity War',
     year: 2018,
-    image: '/images/armor/mk-l.jpg',
+    image: '/public/images/mark50.jpg',
   },
   {
     id: 'mk-lxxxv',
@@ -57,6 +57,6 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     tagline: 'Refined nanotech armor',
     film: 'Avengers: Endgame',
     year: 2019,
-    image: '/images/armor/mk-lxxxv.jpg',
+    image: '/public/images/mark85.jpg',
   },
 ];

@@ -21,7 +21,7 @@ export const HERO = {
   tagline: 'The man. The machine. The legacy.',
   body: 'He built a suit to survive. He became a hero by learning what was worth protecting. This is the story of Tony Stark.',
   cta: 'Explore chapters',
-  image: '/images/hero/iron-man-hero.jpg',
+  image: '/public/images/starkironman.jpg',
   imageAlt: 'Tony Stark standing in his workshop with armor displays behind him',
 };
 
@@ -36,7 +36,7 @@ export const BEFORE = {
     { year: '1970', text: 'Born in Manhattan' },
     { year: '1991', text: 'His parents are killed' },
   ],
-  image: '/images/before/tony-workshop.jpg',
+  image: '/public/images/workshop.jpg',
   imageAlt: 'Tony Stark in a dark workshop',
   caption: 'Anthony Edward Stark',
 };
@@ -48,7 +48,7 @@ export const BEGINNING = {
     'Captured by the Ten Rings and wounded by his own weapons, Tony survives because Ho Yinsen keeps shrapnel from reaching his heart. Together, they build a miniature Arc Reactor, and something their captors never see coming.',
   secondary:
     'The Mark I gets him out. Yinsen\u2019s sacrifice gives him a reason not to waste the life that remains.',
-  image: '/images/beginning/forge.jpg',
+  image: '/public/images/forge.jpg',
   imageAlt: 'Tony Stark hammering metal at a forge inside a cave',
   quote: 'Don\u2019t waste it. Don\u2019t waste your life.',
   captions: ['A lifeline becomes a power source.', 'Forged under captivity. Not in a lab.'],
@@ -102,7 +102,7 @@ export const BEHIND = {
     'After New York, sleep becomes difficult. Panic finds him far from the battlefield. He builds more suits, as if another layer of metal might quiet the fear underneath.',
     'But the people who love him never needed another Iron Man. They needed Tony. The closer he comes to an ordinary life, the more extraordinary the cost of leaving it becomes.',
   ],
-  image: '/images/behind/family-lake.jpg',
+  image: '/public/images/family.jpg',
   imageAlt: 'Tony Stark sitting on a lakeside dock with his family',
   caption: 'Story / The five years after the Blip',
   captionRight: 'Avengers: Endgame / Release 2019',
