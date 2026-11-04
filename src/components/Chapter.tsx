@@ -5,6 +5,8 @@ import { useReducedMotion } from '../hooks/useReducedMotion';
 import './Chapter.css';
 
 const FADE_SHARE = 0.5;
+const DESKTOP_QUERY = '(min-width: 900px)';
+const MOBILE_QUERY = '(max-width: 899px)';
 
 interface ChapterProps {
   id: string;
@@ -14,6 +16,18 @@ interface ChapterProps {
   fadeOut?: boolean;
   className?: string;
   children: ReactNode;
+}
+
+function buildFadeTimeline(section: HTMLElement, fade: number, fadeIn: boolean, fadeOut: boolean) {
+  const timeline = gsap.timeline();
+  if (fadeIn) {
+    timeline.fromTo(section, { opacity: 0 }, { opacity: 1, duration: fade, ease: 'none' }, 0);
+  }
+  if (fadeOut) {
+    timeline.to(section, { opacity: 0, duration: fade, ease: 'none' }, 1 - fade);
+  }
+  timeline.set({}, {}, 1);
+  return timeline;
 }
 
 export function Chapter({
@@ -36,32 +50,42 @@ export function Chapter({
       const section = sectionRef.current;
       if (!section) return;
 
-      const fade = Math.min(FADE_SHARE, FADE_SHARE / span);
-      const timeline = gsap.timeline();
+      const notify = (progress: number) => {
+        listenersRef.current.forEach((listener) => listener(progress));
+      };
 
-      if (fadeIn) {
-        timeline.fromTo(section, { opacity: 0 }, { opacity: 1, duration: fade, ease: 'none' }, 0);
-      }
-      if (fadeOut) {
-        timeline.to(section, { opacity: 0, duration: fade, ease: 'none' }, 1 - fade);
-      }
-      timeline.set({}, {}, 1);
+      const mm = gsap.matchMedia();
 
-      triggerRef.current = ScrollTrigger.create({
-        trigger: section,
-        start: 'top top',
-        end: () => '+=' + window.innerHeight * span,
-        pin: true,
-        scrub: true,
-        animation: timeline,
-        onUpdate: (self) => {
-          listenersRef.current.forEach((listener) => listener(self.progress));
-        },
+      mm.add(DESKTOP_QUERY, () => {
+        const fade = Math.min(FADE_SHARE, FADE_SHARE / span);
+        triggerRef.current = ScrollTrigger.create({
+          trigger: section,
+          start: 'top top',
+          end: () => '+=' + window.innerHeight * span,
+          pin: true,
+          scrub: true,
+          animation: buildFadeTimeline(section, fade, fadeIn, fadeOut),
+          onUpdate: (self) => notify(self.progress),
+        });
+        return () => {
+          triggerRef.current = null;
+        };
       });
 
-      return () => {
-        triggerRef.current = null;
-      };
+      mm.add(MOBILE_QUERY, () => {
+        const range = section.offsetHeight + window.innerHeight;
+        const fade = Math.min(FADE_SHARE, (FADE_SHARE * window.innerHeight) / range);
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          animation: buildFadeTimeline(section, fade, fadeIn, fadeOut),
+          onUpdate: (self) => notify(self.progress),
+        });
+      });
+
+      return () => mm.revert();
     },
     { scope: sectionRef, dependencies: [reducedMotion, span, fadeIn, fadeOut] },
   );
