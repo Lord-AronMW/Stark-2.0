@@ -22,15 +22,6 @@
   gap: 3rem;
 }
 
-.reactor-section__eyebrow {
-  font-family: var(--font-mono);
-  font-size: var(--size-label);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: 1rem;
-}
-
 .reactor-section__title {
   font-size: var(--display-md);
   color: var(--color-text-dark);
@@ -92,14 +83,6 @@
   max-width: 18rem;
   padding-top: 1rem;
   border-top: 2px solid var(--color-red);
-}
-
-.reactor-section__artifact-label {
-  font-family: var(--font-mono);
-  font-size: var(--size-label);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-gold);
 }
 
 .reactor-section__artifact-title {

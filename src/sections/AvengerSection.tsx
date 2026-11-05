@@ -118,7 +118,7 @@ function AvengerBody() {
             </div>
             <div>
               <p className="avenger-section__relation-label">
-                {member.id === 'stark' ? 'Role on the team' : 'Relationship to Stark'}
+                {member.id === 'stark' ? 'Role in the team' : 'Relationship to Stark'}
               </p>
               <ul className="avenger-section__tags">
                 {member.relations.map((relation) => (

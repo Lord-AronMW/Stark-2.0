@@ -16,6 +16,8 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     film: 'Iron Man',
     year: 2008,
     image: '/public/images/mark1.jpg',
+    description:
+      'Built in captivity, forged from scraps. The Mark I was his first armor, a crude but powerful exoskeleton that turns desperation into survival and marks the birth of Iron Man.',
   },
   {
     id: 'mk-iii',
@@ -34,6 +36,8 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     film: 'The Avengers',
     year: 2012,
     image: '/public/images/mark7.jpg',
+    description:
+      'The first fully functional automated armor arrives. The Mark VII introduces a redesigned flight system and emergency deployment, transforming his armor into a battle ready machine.',
   },
   {
     id: 'mk-xlii',
@@ -42,6 +46,8 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     film: 'Iron Man 3',
     year: 2013,
     image: '/public/images/mark42.jpg',
+    description:
+      'The armor that comes to him. The Mark XLII introduces autonomous assembly and modular components, allowing Tony to summon individual armor pieces from a distance.',
   },
   {
     id: 'mk-l',
@@ -50,6 +56,8 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     film: 'Avengers: Infinity War',
     year: 2018,
     image: '/public/images/mark50.jpg',
+    description:
+      'The future of armor begins. The Mark L introduces advanced nanotechnology, forming instantly around Tony while adapting weapons and defenses on demand.',
   },
   {
     id: 'mk-lxxxv',
@@ -58,5 +66,7 @@ export const ARMOR_SUITS: ArmorSuit[] = [
     film: 'Avengers: Endgame',
     year: 2019,
     image: '/public/images/mark85.jpg',
+    description:
+      'The ultimate evolution arrives. The Mark LXXXV combines refined nanotechnology with enhanced durability and advanced weapon systems, becoming his final armor in the battle against Thanos.',
   },
 ];

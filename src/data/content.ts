@@ -1,12 +1,10 @@
 export const NAV_CHAPTERS = [
-  { id: 'hero', number: '01', label: 'Hero' },
-  { id: 'before', number: '02', label: 'Before' },
-  { id: 'beginning', number: '03', label: 'The beginning' },
-  { id: 'armor', number: '04', label: 'Armor evolution' },
-  { id: 'avenger', number: '05', label: 'The Avenger' },
-  { id: 'behind', number: '06', label: 'Behind the armor' },
-  { id: 'climax', number: '07', label: 'The climax' },
-  { id: 'legacy', number: '08', label: 'The legacy' },
+  { id: 'before', label: 'Before' },
+  { id: 'beginning', label: 'The beginning' },
+  { id: 'armor', label: 'Armor evolution' },
+  { id: 'avenger', label: 'The Avenger' },
+  { id: 'behind', label: 'Behind the armor' },
+  { id: 'climax', label: 'The climax' },
 ] as const;
 
 export const SITE = {
@@ -15,9 +13,7 @@ export const SITE = {
 };
 
 export const HERO = {
-  eyebrow: 'Stark Industries',
   title: 'Iron Man',
-  subtitle: 'The legacy of Tony Stark',
   tagline: 'The man. The machine. The legacy.',
   body: 'He built a suit to survive. He became a hero by learning what was worth protecting. This is the story of Tony Stark.',
   cta: 'Explore chapters',
@@ -38,34 +34,33 @@ export const BEFORE = {
   ],
   image: '/public/images/workshop.jpg',
   imageAlt: 'Tony Stark in a dark workshop',
-  caption: 'Anthony Edward Stark',
+  caption: 'Anthony Edward Stark / Tony Stark',
 };
 
 export const BEGINNING = {
   eyebrow: 'Afghanistan / The cave / The first spark',
   title: ['Captivity.', 'Then creation.'],
   intro:
-    'Captured by the Ten Rings and wounded by his own weapons, Tony survives because Ho Yinsen keeps shrapnel from reaching his heart. Together, they build a miniature Arc Reactor, and something their captors never see coming.',
+    'Captured by the Ten Rings and wounded by his own weapons, Tony survives because Ho Yinsen keeps shrapnel from reaching his heart. Together, they build a miniature Arc Reactor, and something their captors never saw coming.',
   secondary:
     'The Mark I gets him out. Yinsen\u2019s sacrifice gives him a reason not to waste the life that remains.',
   image: '/public/images/forge.jpg',
   imageAlt: 'Tony Stark hammering metal at a forge inside a cave',
-  quote: 'Don\u2019t waste it. Don\u2019t waste your life.',
-  captions: ['A lifeline becomes a power source.', 'Forged under captivity. Not in a lab.'],
+  captions: ['Forged under captivity.'],
 };
 
 export const ARMOR = {
   eyebrow: 'Stark Industries / Hall of armor',
   title: 'Armor evolution',
-  intro: 'Six turning points in a lifetime of iteration. Each suit answers a different fear.',
+
 };
 
 export const AVENGER = {
-  eyebrow: 'New York / 2012. Six individuals. One impossible idea.',
+  eyebrow: 'New York / 2012',
   title: ['He could not', 'do it alone.'],
   team: ['Stark', 'Rogers', 'Romanoff', 'Thor', 'Banner', 'Barton'],
   intro:
-    'The Avengers do not make Tony less difficult. They give his brilliance something to answer to. Steve challenges him. Natasha sees through him. Rhodey keeps him grounded. Learning to trust them is harder than building the suit.',
+    'The Avengers do not change his personality, but they help him become a better hero. Steve challenges him, Natasha understands him, and Rhodey keeps him grounded. Tony slowly learns that trusting others is just as important as building his armor.',
   heading: 'From lone genius to something greater.',
   stories: [
     {
@@ -83,7 +78,7 @@ export const AVENGER = {
     {
       year: '2016',
       title: 'A team divided.',
-      text: 'He backs the Sokovia Accords. Accountability becomes a fault line with Steve Rogers; the truth about his parents makes it personal.',
+      text: 'He backs the Sokovia Accords. Accountability becomes a fault line with Steve Rogers, the truth about his parents makes it personal.',
       film: 'Civil War / 2016',
     },
     {
@@ -103,8 +98,7 @@ export const BEHIND = {
     'But the people who love him never needed another Iron Man. They needed Tony. The closer he comes to an ordinary life, the more extraordinary the cost of leaving it becomes.',
   ],
   image: '/public/images/family.jpg',
-  imageAlt: 'Tony Stark sitting on a lakeside dock with his family',
-  caption: 'Story / The five years after the Blip',
+  imageAlt: 'Tony Stark with his family',
   captionRight: 'Avengers: Endgame / Release 2019',
   people: [
     {
@@ -120,7 +114,7 @@ export const BEHIND = {
     {
       name: 'Morgan',
       tagline: 'A future he can hold.',
-      text: 'After the Blip, a daughter and a quiet home give him the life he once could not imagine. Saving everyone means risking it.',
+      text: 'A daughter and a quiet home give him the life he once could not imagine. Saving everyone means risking it.',
     },
   ],
 };
@@ -128,29 +122,26 @@ export const BEHIND = {
 export const CLIMAX = {
   title: 'I am Iron Man.',
   text: 'Once, the words were a confession. Now, they are a choice. Tony takes the Stones and ends the battle, knowing he will not survive it.',
-  meta: ['Story / Earth, 2023', 'Film / Avengers: Endgame / Release 2019'],
+  meta: ['Avengers: Endgame / Release 2019'],
   footer: 'The invention was never the whole story.',
 };
 
 export const REACTOR = {
-  eyebrow: 'The invention was never the whole story.',
   title: ['Not the suit.', 'The heart.'],
   intro:
     'Tony leaves behind a world that gets another chance. For Peter, a mentor\u2019s absence. For Rhodey, a friend\u2019s impossible example. For Pepper and Morgan, a life of small moments no monument can replace. His future belongs to the people who carry it forward.',
   quote: 'I love you 3000.',
   quoteCaption: 'A father\u2019s message. A family\u2019s memory.',
   artifact: {
-    label: 'Artifact / 001',
     title: 'Original miniature arc reactor',
     text: 'Pepper saved it when Tony was ready to throw it away. Long before the world called him a hero, someone had already seen his heart.',
   },
-  reactorLabels: ['Arc reactor / Radial assembly', 'Copper coil array / Concentric power core'],
-  footer: 'Proof that Tony Stark has a heart.',
+  reactorLabels: ['Arc reactor', 'Concentric power core'],
+  footer:'Proof that Tony Stark has a heart.',
 };
 
 export const LEGACY = {
   title: ['The legacy', 'lives on.'],
   name: 'Anthony Edward Stark / 1970\u20132023',
   footerTitle: 'Iron Man: The legacy of Tony Stark',
-  backLabel: 'Back to the beginning',
 };

@@ -93,15 +93,6 @@
   color: var(--color-text-dark);
 }
 
-.beginning-section__quote {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1;
-  text-transform: uppercase;
-  color: var(--color-text-dark);
-}
-
 @media (max-width: 899px) {
   .beginning-section__inner {
     height: auto;

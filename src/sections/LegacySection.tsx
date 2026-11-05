@@ -17,16 +17,6 @@ export function LegacySection() {
 
         <footer className="legacy-section__footer">
           <p className="legacy-section__footer-title">{LEGACY.footerTitle}</p>
-          <a
-            href="#hero"
-            className="legacy-section__back"
-            onClick={(event) => {
-              event.preventDefault();
-              goToChapter('hero');
-            }}
-          >
-            {LEGACY.backLabel} ↑
-          </a>
         </footer>
       </div>
     </Chapter>

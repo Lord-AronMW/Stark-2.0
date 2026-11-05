@@ -22,7 +22,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     fullName: 'Steve Rogers',
     alias: 'Captain America',
     relations: ['Teammate', 'Rival'],
-    text: 'A soldier with a moral compass Tony cannot ignore. They clash over Ultron and the Sokovia Accords, and their disagreement splits the team in Civil War.',
+    text: 'A soldier with a moral compass Tony cannot ignore. They clash over Ultron and the Sokovia Accords, and their disagreement splits the team into two leading to a Civil War between the Avengers.',
   },
   {
     id: 'romanoff',
@@ -30,7 +30,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     fullName: 'Natasha Romanoff',
     alias: 'Black Widow',
     relations: ['Teammate', 'Friend'],
-    text: 'A spy who reads people quickly, Tony included. She sees through him, challenges him, and stands with him when the team splits in Civil War.',
+    text: 'A spy who reads people quickly, Tony included. She sees through him, challenges him, and stands with him when the team splits in the Civil War.',
   },
   {
     id: 'thor',
@@ -46,7 +46,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     fullName: 'Bruce Banner',
     alias: 'The Hulk',
     relations: ['Teammate', 'Friend'],
-    text: 'A scientist who shares Tony\u2019s drive to understand how things work. Together they build Ultron, and the disaster leaves them both carrying the guilt.',
+    text: 'A scientist who shares Tony\u2019s drive to understand how things work. Together they built Ultron, and the disaster leaves them both carrying the guilt.',
   },
   {
     id: 'barton',

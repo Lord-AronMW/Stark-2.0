@@ -81,7 +81,6 @@ function ArmorBody() {
           <p className="armor-section__eyebrow">{ARMOR.eyebrow}</p>
           <h2 className="armor-section__title">{ARMOR.title}</h2>
         </div>
-        <p className="armor-section__intro">{ARMOR.intro}</p>
       </header>
 
       <nav className="armor-section__selector" aria-label="Armor suits">

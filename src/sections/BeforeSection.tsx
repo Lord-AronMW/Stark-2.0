@@ -38,7 +38,6 @@ export function BeforeSection() {
             />
             <figcaption className="before-section__caption">
               <span>{BEFORE.caption}</span>
-              <span>Personal / 001</span>
             </figcaption>
           </figure>
         </div>

@@ -1,7 +1,12 @@
 import { useState } from 'react';
-import { NAV_CHAPTERS, SITE } from '../data/content';
+import { NAV_CHAPTERS } from '../data/content';
 import { goToChapter } from '../lib/chapterContext';
 import './SiteHeader.css';
+
+const FIRST_CHAPTER_ID = 'hero';
+const SPLIT_INDEX = Math.ceil(NAV_CHAPTERS.length / 2);
+const LEFT_CHAPTERS = NAV_CHAPTERS.slice(0, SPLIT_INDEX);
+const RIGHT_CHAPTERS = NAV_CHAPTERS.slice(SPLIT_INDEX);
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -14,25 +19,9 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__bar">
-        <a
-          href="#hero"
-          className="site-header__brand"
-          onClick={(event) => {
-            event.preventDefault();
-            jump('hero');
-          }}
-        >
-          <svg className="site-header__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" strokeWidth="1.25" />
-            <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" strokeWidth="1" />
-            <circle cx="12" cy="12" r="2" fill="currentColor" />
-          </svg>
-          <span className="site-header__name">{SITE.name}</span>
-        </a>
-
-        <nav className="site-header__nav" aria-label="Chapters">
+        <nav className="site-header__nav site-header__nav--left" aria-label="Chapters">
           <ul>
-            {NAV_CHAPTERS.map((chapter) => (
+            {LEFT_CHAPTERS.map((chapter) => (
               <li key={chapter.id}>
                 <a
                   href={`#${chapter.id}`}
@@ -41,7 +30,42 @@ export function SiteHeader() {
                     jump(chapter.id);
                   }}
                 >
-                  <span className="site-header__number">{chapter.number}</span>
+                  {chapter.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <a
+          href={`#${FIRST_CHAPTER_ID}`}
+          className="site-header__logo"
+          aria-label="Back to the start"
+          onClick={(event) => {
+            event.preventDefault();
+            jump(FIRST_CHAPTER_ID);
+          }}
+        >
+          <img
+            src="/public/images/arc-reactor.png"
+            alt=""
+            className="site-header__logo-img"
+            draggable="false"
+            style={{ width: 45, height: 45,}}
+          />
+        </a>
+
+        <nav className="site-header__nav site-header__nav--right" aria-label="Chapters">
+          <ul>
+            {RIGHT_CHAPTERS.map((chapter) => (
+              <li key={chapter.id}>
+                <a
+                  href={`#${chapter.id}`}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    jump(chapter.id);
+                  }}
+                >
                   {chapter.label}
                 </a>
               </li>
@@ -77,7 +101,6 @@ export function SiteHeader() {
                   jump(chapter.id);
                 }}
               >
-                <span className="site-header__number">{chapter.number}</span>
                 {chapter.label}
               </a>
             </li>
