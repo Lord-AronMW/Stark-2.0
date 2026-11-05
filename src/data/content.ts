@@ -89,7 +89,6 @@ export const AVENGER = {
     },
   ],
 };
-
 export const BEHIND = {
   eyebrow: 'No armor can keep everything out.',
   title: ['The hardest thing to build', 'was a life.'],
@@ -102,7 +101,7 @@ export const BEHIND = {
   captionRight: 'Avengers: Endgame / Release 2019',
   people: [
     {
-      name: 'Pepper',
+      name: 'Pepper', 
       tagline: 'A partner, not a safety net.',
       text: 'She sees the man behind the performance. Their life together asks him to be present, not merely brilliant.',
     },

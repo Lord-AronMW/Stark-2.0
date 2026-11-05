@@ -103,3 +103,27 @@ h3 {
     scroll-behavior: auto !important;
   }
 }
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #c8a26b #0a0c0e;
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #0a0c0e;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #c8a26b, #8a6a3b);
+  border-radius: 999px;
+  box-shadow: 0 0 8px rgba(200, 162, 107, 0.35);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #b3262b, #5e1c1d);
+  box-shadow: 0 0 10px rgba(179, 38, 43, 0.5);
+}

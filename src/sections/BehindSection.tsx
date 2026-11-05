@@ -30,7 +30,6 @@ export function BehindSection() {
             draggable="false"
           />
           <figcaption className="behind-section__caption">
-            <span>{BEHIND.caption}</span>
             <span>{BEHIND.captionRight}</span>
           </figcaption>
         </figure>

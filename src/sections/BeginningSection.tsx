@@ -30,11 +30,8 @@ export function BeginningSection() {
           />
           <div className="beginning-section__captions">
             <span>{BEGINNING.captions[0]}</span>
-            <span>{BEGINNING.captions[1]}</span>
           </div>
         </figure>
-
-        <p className="beginning-section__quote">{BEGINNING.quote}</p>
       </div>
     </Chapter>
   );
