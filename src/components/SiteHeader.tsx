@@ -47,7 +47,7 @@ export function SiteHeader() {
           }}
         >
           <img
-            src="/public/images/arc-reactor.png"
+            src="/public/images/arc-reactor.jpg"
             alt=""
             className="site-header__logo-img"
             draggable="false"

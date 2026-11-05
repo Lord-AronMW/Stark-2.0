@@ -49,6 +49,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1.25rem;
+  margin-top: auto;
 }
 
 .hero-section__title {
