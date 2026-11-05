@@ -54,7 +54,6 @@ function ReactorBody() {
     <div className="reactor-section__inner" ref={innerRef}>
       <div className="reactor-section__top reactor-section__fade">
         <div>
-          <p className="reactor-section__eyebrow">{REACTOR.eyebrow}</p>
           <h2 className="reactor-section__title">
             <span>{REACTOR.title[0]}</span>
             <span>{REACTOR.title[1]}</span>
@@ -74,7 +73,6 @@ function ReactorBody() {
         </div>
 
         <aside className="reactor-section__artifact reactor-section__fade">
-          <p className="reactor-section__artifact-label">{REACTOR.artifact.label}</p>
           <h3 className="reactor-section__artifact-title">{REACTOR.artifact.title}</h3>
           <p className="reactor-section__artifact-text">{REACTOR.artifact.text}</p>
         </aside>

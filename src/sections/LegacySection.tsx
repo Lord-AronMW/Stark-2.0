@@ -1,6 +1,5 @@
 import { Chapter } from '../components/Chapter';
 import { LEGACY } from '../data/content';
-import { goToChapter } from '../lib/chapterContext';
 import './LegacySection.css';
 
 export function LegacySection() {

@@ -17,10 +17,6 @@ export function HeroSection() {
       </div>
 
       <div className="hero-section__inner">
-        <div className="hero-section__top">
-          <p className="hero-section__eyebrow">{HERO.eyebrow}</p>
-          <p className="hero-section__sub">{HERO.subtitle}</p>
-        </div>
 
         <div className="hero-section__body">
           <h1 className="hero-section__title">{HERO.title}</h1>
